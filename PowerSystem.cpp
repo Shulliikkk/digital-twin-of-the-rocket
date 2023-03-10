@@ -43,7 +43,6 @@ public:
     }
 };
 
-
 class Battaries : public PowerSupplySystem {
 private:
     static constexpr int amount_battaries = 3;
@@ -84,7 +83,6 @@ public:
     }
 };
 
-
 class Load : public PowerSupplySystem {
 private:
   static constexpr float critical_amperage = 1;
@@ -119,15 +117,15 @@ int main() {
   Load load;
 
   battaries.discharge_batteries(PWS, discharge_amount_1);
-  std::cout << PWS.get_voltage() << '\n';
+  std::cout << "On-board amperage " << PWS.get_voltage() << '\n';
   load.change_load_resistance(PWS, 0);
-  std::cout << PWS.get_amperage() << '\n';
+  std::cout << "On-board amperage " << PWS.get_amperage() << '\n';
   battaries.discharge_batteries(PWS, discharge_amount_2);
-  std::cout << PWS.get_voltage() << '\n';
+  std::cout << "On-board voltage " << PWS.get_voltage() << '\n';
   load.change_load_resistance(PWS, 0);
-  std::cout << PWS.get_amperage() << '\n';
+  std::cout << "On-board amperage " << PWS.get_amperage() << '\n';
   battaries.discharge_batteries(PWS, discharge_amount_3);
-  std::cout << PWS.get_voltage() << '\n';
+  std::cout << "On-board voltage " << PWS.get_voltage() << '\n';
   load.change_load_resistance(PWS, 0);
-  std::cout << PWS.get_amperage() << '\n';
+  std::cout << "On-board amperage " << PWS.get_amperage() << '\n';
 }
